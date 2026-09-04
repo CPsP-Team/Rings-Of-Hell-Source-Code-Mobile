@@ -1,4 +1,4 @@
-![](https://github.com/Funkoff-Team/Rings-Of-Hell-Source-Code/main/content/RingsOfBallz/images/menus/titlemenu/verylogo-new.png)
+![](https://github.com/Funkoff-Team/Rings-Of-Hell-Source-Code/blob/main/content/RingsOfBallz/images/menus/titlemenu/verylogo-new.png)
 
 # Friday Night Funkin': Rings Of Hell Source Code
 
