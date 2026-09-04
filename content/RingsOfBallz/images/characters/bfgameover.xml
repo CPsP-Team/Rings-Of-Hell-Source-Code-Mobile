@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bfgameover.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="First0000" x="798" y="0" width="771" height="840" frameX="-140" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0001" x="0" y="0" width="798" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0002" x="0" y="0" width="798" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0003" x="0" y="840" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0004" x="0" y="840" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0005" x="0" y="840" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0006" x="0" y="840" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0007" x="0" y="840" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0008" x="0" y="840" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0009" x="1569" y="0" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0010" x="1569" y="0" width="765" height="840" frameX="-131" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0011" x="765" y="840" width="761" height="840" frameX="-135" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0012" x="765" y="840" width="761" height="840" frameX="-135" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0013" x="1526" y="840" width="756" height="840" frameX="-140" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0014" x="3826" y="0" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0015" x="0" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0016" x="0" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0017" x="2238" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0018" x="2238" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0019" x="3080" y="0" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0020" x="3080" y="0" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0021" x="2238" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0022" x="2238" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0023" x="2238" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0024" x="2238" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0025" x="3080" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0026" x="2984" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0027" x="746" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="First0028" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0000" x="746" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0001" x="1492" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0002" x="1492" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0003" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0004" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0005" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0006" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0007" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0008" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0009" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0010" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0011" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0012" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0013" x="3080" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0014" x="1492" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0015" x="1492" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0016" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0017" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0018" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0019" x="2334" y="840" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0020" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Loop0021" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0000" x="0" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0001" x="0" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0002" x="1492" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0003" x="1492" y="1680" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0004" x="2334" y="0" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0005" x="2334" y="0" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0006" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="Retry0007" x="2238" y="2520" width="746" height="840" frameX="-150" frameY="-59" frameWidth="1000" frameHeight="1000"/>
+</TextureAtlas>

@@ -1,0 +1,95 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				47,
+				563
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "eyx Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-102,
+				369
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "eyx Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				270,
+				118
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "eyx Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				327,
+				397
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "eyx Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				210,
+				306
+			],
+			"anim": "laugh",
+			"fps": 24,
+			"name": "eyx Laugh",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				120,
+				350
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "eyx Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"ghosts_enabled": false,
+	"image": "characters/DraenogNEW_Assets",
+	"position": [
+		50,
+		210
+	],
+	"dance_every": 2,
+	"gameover_intial_sound": null,
+	"scalableOffsets": false,
+	"gameover_confirm_sound": null,
+	"healthicon": "eyx",
+	"gameover_character": null,
+	"vslice_sustains": false,
+	"flip_x": false,
+	"healthbar_colour": -12625301,
+	"camera_position": [
+		-280,
+		-340
+	],
+	"gameover_loop_sound": null,
+	"icon_count": 2,
+	"sing_duration": 5.8,
+	"scale": 1.2,
+	"_editor_isPlayer": false
+}

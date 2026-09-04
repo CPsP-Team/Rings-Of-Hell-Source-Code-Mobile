@@ -1,0 +1,84 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-3,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Idle"
+		},
+		{
+			"offsets": [
+				-39,
+				-6
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Left"
+		},
+		{
+			"offsets": [
+				3,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Right"
+		},
+		{
+			"offsets": [
+				-15,
+				43
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Up"
+		},
+		{
+			"offsets": [
+				-38,
+				-11
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Down"
+		}
+	],
+	"no_antialiasing": false,
+	"ghosts_enabled": false,
+	"image": "characters/Faker2025x",
+	"position": [
+		-420,
+		-300
+	],
+	"dance_every": 2,
+	"gameover_intial_sound": null,
+	"scalableOffsets": false,
+	"gameover_confirm_sound": null,
+	"healthicon": "sonic",
+	"gameover_character": null,
+	"vslice_sustains": false,
+	"flip_x": false,
+	"healthbar_colour": -16755201,
+	"camera_position": [
+		160,
+		90
+	],
+	"gameover_loop_sound": null,
+	"icon_count": 2,
+	"sing_duration": 6.1,
+	"scale": 0.8,
+	"_editor_isPlayer": false
+}

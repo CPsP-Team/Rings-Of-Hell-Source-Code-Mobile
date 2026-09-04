@@ -1,255 +1,141 @@
 package;
 
-#if android
-import android.content.Context;
-#end
+import funkin.utils.WindowUtil;
 
-import debug.FPSCounter;
-
-import flixel.graphics.FlxGraphic;
-import flixel.FlxGame;
-import flixel.FlxState;
-import haxe.io.Path;
-import openfl.Assets;
 import openfl.Lib;
 import openfl.display.Sprite;
-import openfl.events.Event;
 import openfl.display.StageScaleMode;
-import lime.app.Application;
-import states.TitleState;
-import states.SpecsDetector;
 
-#if linux
+import flixel.FlxG;
+import flixel.FlxGame;
+import flixel.input.keyboard.FlxKey;
+
+import funkin.backend.DebugDisplay;
+#if (linux && !debug)
+import hxgamemode.GamemodeClient;
+#end
+/*
+#if (linux || mac)
 import lime.graphics.Image;
 #end
+*/
 
-//crash handler stuff
-#if CRASH_HANDLER
-import openfl.events.UncaughtErrorEvent;
-import haxe.CallStack;
-import haxe.io.Path;
-#end
-
-#if cpp
-import cpp.vm.Gc;
-#elseif hl
-import hl.Gc;
-#elseif java
-import java.vm.Gc;
-#elseif neko
-import neko.vm.Gc;
-#end
-
-#if linux
-@:cppInclude('./external/gamemode_client.h')
-@:cppFileCode('
-	#define GAMEMODE_AUTO
-')
-#end
+@:nullSafety(Strict)
 class Main extends Sprite
 {
-	var game = {
-		width: 1280, // WINDOW width
-		height: 720, // WINDOW height
-		initialState: SpecsDetector, // initial game state
-		zoom: -1.0, // game state bounds
-		framerate: 60, // default framerate
-		skipSplash: false, // if the default flixel splash screen should be skipped
-		startFullscreen: false // if the game should start at fullscreen mode
+	public static final PSYCH_VERSION:String = '0.5.2h';
+	public static final NMV_VERSION:String = '1.0';
+	public static final FUNKIN_VERSION:String = '0.2.7';
+	
+	public static final startMeta =
+	{
+		width: 1280,
+		height: 720,
+		fps: 60,
+		skipSplash: #if debug true #else false #end,
+		startFullScreen: false,
+		initialState: funkin.states.FlashingState
 	};
-
-	public static var fpsVar:FPSCounter;
-	public static var skipNextDump:Bool = false;
-	public static var currentState:Class<FlxState>;
-
-	// You can pretty much ignore everything from here on - your code should go in your states.
-
+		
+	static function __init__()
+	{
+		#if (linux && !debug)
+		// Request we start game mode
+		if (GamemodeClient.request_start() != 0)
+		{
+		  Sys.println('Failed to request gamemode start: ${GamemodeClient.error_string()}...');
+		  openfl.system.System.exit(1);
+		} else
+		{
+		  Sys.println('Succesfully requested gamemode to start...');
+		}
+		#end
+	
+		funkin.utils.MacroUtil.haxeVersionEnforcement();
+		
+		openfl.utils._internal.Log.level = openfl.utils._internal.Log.LogLevel.INFO;
+	}
+	
 	public static function main():Void
 	{
 		Lib.current.addChild(new Main());
-		//Window Setting
-		#if windows
-		WindowsAPI.setWindowColorMode(DARK);
-		#end
 	}
-
+	
 	public function new()
 	{
 		super();
-
-		// Credits to MAJigsaw77 (he's the og author for this code)
-		#if android
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
-		#elseif ios
-		Sys.setCwd(lime.system.System.applicationStorageDirectory);
+		
+		#if (CRASH_HANDLER && !debug)
+		funkin.backend.CrashHandler.init();
 		#end
-
-		if (stage != null)
-		{
-			init();
-		}
-		else
-		{
-			addEventListener(Event.ADDED_TO_STAGE, init);
-		}
-	}
-
-	private function init(?E:Event):Void
-	{
-		if (hasEventListener(Event.ADDED_TO_STAGE))
-		{
-			removeEventListener(Event.ADDED_TO_STAGE, init);
-		}
-
-		setupGame();
-	}
-
-	private function setupGame():Void
-	{
-		var stageWidth:Int = Lib.current.stage.stageWidth;
-		var stageHeight:Int = Lib.current.stage.stageHeight;
-
-		if (game.zoom == -1.0)
-		{
-			var ratioX:Float = stageWidth / game.width;
-			var ratioY:Float = stageHeight / game.height;
-			game.zoom = Math.min(ratioX, ratioY);
-			game.width = Math.ceil(stageWidth / game.zoom);
-			game.height = Math.ceil(stageHeight / game.zoom);
-		}
-	
-		#if LUA_ALLOWED Lua.set_callbacks_function(cpp.Callable.fromStaticFunction(psychlua.CallbackHandler.call)); #end
-		Controls.instance = new Controls();
+		
+		initHaxeUI();
+		
+		WindowUtil.resetWindow();
+		
+		// load save data before creating FlxGame
 		ClientPrefs.loadDefaultKeys();
-		#if ACHIEVEMENTS_ALLOWED Achievements.load(); #end
-
-		#if desktop
-		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));	
-	  #else
-  	addChild(new FlxGame(1280, 720, SpecsDetector, 60, 60, false, false));
-  	#end
-
-		FlxG.signals.preStateSwitch.add(function () {
-			if (!Main.skipNextDump) {
-				Paths.clearStoredMemory();
-				FlxG.bitmap.dumpCache();
-			}
-			clearMajor();
-		});
-		FlxG.signals.postStateSwitch.add(function () {
-			Paths.clearUnusedMemory();
-			clearMajor();
-			Main.skipNextDump = false;
-		});
-
-		fpsVar = new FPSCounter(10, 3, 0xFFFFFF);
-		addChild(fpsVar);
-		Lib.current.stage.align = "tl";
-		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
-		if(fpsVar != null) {
-			fpsVar.visible = ClientPrefs.data.showFPS;
-		}
-
-		#if linux
+		ClientPrefs.tryBindingSave('funkin');
+		
+		addChild(new funkin.backend.FunkinGame(startMeta.width, startMeta.height, Init, startMeta.fps, startMeta.fps, true, startMeta.startFullScreen));
+		
+		// prevent accept button when alt+enter is pressed
+		FlxG.stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN, (e) -> {
+			if (e.keyCode == FlxKey.ENTER && e.altKey) e.stopImmediatePropagation();
+		}, false, 100);
+		
+		DebugDisplay.init();
+		
+		FlxG.signals.gameResized.add(onResize);
+		/*
+		#if (linux || mac)
 		var icon = Image.fromFile("icon.png");
 		Lib.current.stage.window.setIcon(icon);
 		#end
-
-		#if html5
-		FlxG.autoPause = false;
-		FlxG.mouse.visible = false;
+		*/
+		#if DISABLE_TRACES
+		haxe.Log.trace = (v:Dynamic, ?infos:haxe.PosInfos) -> {}
 		#end
+	}
+	
+	@:access(flixel.FlxCamera)
+	static function onResize(w:Int, h:Int)
+	{
+		final scale:Float = Math.max(1, Math.min(w / FlxG.width, h / FlxG.height));
 		
-		#if CRASH_HANDLER
-		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
-		#end
-
-		#if desktop
-		DiscordClient.prepare();
-		#end
-
-		// shader coords fix
-		FlxG.signals.gameResized.add(onResizeGame);
-	}
-
-	function onResizeGame(w:Int, h:Int) {
-		fixShaderSize(this);
-		if (FlxG.game != null) fixShaderSize(FlxG.game);
-
-		if (FlxG.cameras == null) return;
-		for (cam in FlxG.cameras.list) {
-			@:privateAccess
-			if (cam != null && (cam._filters != null || cam._filters != []))
-				fixShaderSize(cam.flashSprite);
-		}	
-	}
-
-	function fixShaderSize(sprite:Sprite) // Shout out to Ne_Eo for bringing this to my attention
-	{
-		@:privateAccess {
-			if (sprite != null)
-			{
-				sprite.__cacheBitmap = null;
-				sprite.__cacheBitmapData = null;
-				sprite.__cacheBitmapData2 = null;
-				sprite.__cacheBitmapData3 = null;
-				sprite.__cacheBitmapColorTransform = null;
-			}
-		}
-	}
-
-	public static function clearMajor() {
-		#if cpp
-		Gc.run(true);
-		Gc.compact();
-		#elseif hl
-		Gc.major();
-		#elseif (java || neko)
-		Gc.run(true);
-		#end
-	}
-
-	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
-	// very cool person for real they don't get enough credit for their work
-	#if CRASH_HANDLER
-	function onCrash(e:UncaughtErrorEvent):Void
-	{
-		var errMsg:String = "";
-		var path:String;
-		var callStack:Array<StackItem> = CallStack.exceptionStack(true);
-		var dateNow:String = Date.now().toString();
-
-		dateNow = dateNow.replace(" ", "_");
-		dateNow = dateNow.replace(":", "'");
-
-		path = "./crash/" + "RingsOfHell_" + dateNow + ".txt";
-
-		for (stackItem in callStack)
+		if (FlxG.cameras != null)
 		{
-			switch (stackItem)
+			for (i in FlxG.cameras.list)
 			{
-				case FilePos(s, file, line, column):
-					errMsg += file + " (line " + line + ")\n";
-				default:
-					Sys.println(stackItem);
+				if (i != null && i.filters != null) resetSpriteCache(i.flashSprite);
 			}
 		}
-
-		errMsg += "\nUncaught Error: " + e.error + "\nPlease report this error to the GitHub page: https://github.com/Funkoff-Team/FNF-Rings-Of-Hell-Source-Code\n\n> Crash Handler written by: sqirra-rng";
-
-		if (!FileSystem.exists("./crash/"))
-			FileSystem.createDirectory("./crash/");
-
-		File.saveContent(path, errMsg + "\n");
-
-		Sys.println(errMsg);
-		Sys.println("Crash dump saved in " + Path.normalize(path));
-
-		Application.current.window.alert(errMsg, "Error!");
-		#if desktop
-		DiscordClient.shutdown();
-		#end
-		Sys.exit(1);
+		
+		if (FlxG.game != null)
+		{
+			resetSpriteCache(FlxG.game);
+		}
 	}
-	#end
+	
+	@:nullSafety(Off)
+	public static function resetSpriteCache(sprite:Sprite):Void
+	{
+		if (sprite == null) return;
+		@:privateAccess
+		{
+			sprite.__cacheBitmap = null;
+			sprite.__cacheBitmapData = null;
+		}
+	}
+	
+	function initHaxeUI():Void
+	{
+		#if haxeui_core
+		haxe.ui.Toolkit.init();
+		haxe.ui.Toolkit.theme = 'dark';
+		haxe.ui.Toolkit.autoScale = false;
+		haxe.ui.focus.FocusManager.instance.autoFocus = false;
+		haxe.ui.tooltips.ToolTipManager.defaultDelay = 200;
+		#end
+	}
 }

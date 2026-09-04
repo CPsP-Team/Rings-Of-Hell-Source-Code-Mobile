@@ -1,7 +1,5 @@
 <xml>
-	<set name="PROJECT_DIR" value="${this_dir}" />
-	
 	<files id='haxe'>
-		<compilervalue name="-I" value="${PROJECT_DIR}/include/" />
+		<compilervalue name="-I" value="${this_dir}" />
 	</files>
 </xml>

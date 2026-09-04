@@ -1,135 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
+    <!-- APP SETTINGS -->
+    <app title="FNF': Rings Of Hell — Chains Of Deceit" file="RingsOfHell" packageName="com.funkoffteam.eyx" package="com.funkoffteam.eyx" main="Main" version="0.2.7" company="Funkoff-Team"/>
 
-	<!-- _________________________ Appication Settings _________________________ -->
+    <window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false"/>
+    <window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
+	<window unless="mac || linux" allow-high-dpi="true"/>
 
-	<app title="Friday Night Funkin': Rings Of Hell" file="RingsOfHell" packageName="com.funkoff.ringsofhell" package="com.funkoff.ringsofhell" main="Main" version="1.1.0" company="Funkoff Team" />
+    <window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
 
-	<!--Switch Export with Unique ApplicationID and Icon-->
-	<set name="APP_ID" value="0x0100f6c013bbc000" />
+    <!-- ENGINE CONFIGS -->
 
-	<!-- NOTE TO SELF: DISABLE THIS IF ISSUES ARE FOUND -->
-	<haxedef name="LINC_LUA_RELATIVE_DYNAMIC_LIB"/> <!-- stable luas PUT AFTER FIRST LINE WITH APP NAME AND ETC -->
+    <define name="MODS_ALLOWED" if="desktop"/>
+    <define name="VIDEOS_ALLOWED" if="cpp"/>
+    <define name="DISCORD_ALLOWED" if="cpp" unless="android || ios"/>
 
-	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
-		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
-	<!-- <app preloader="Preloader" resizable="true" /> -->
-	<app preloader="flixel.system.FlxPreloader" />
+    <!-- PATH SETTINGS -->
 
-	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
-	<set name="SWF_VERSION" value="11.8" />
+    <classpath name="source"/>
+
+    <!--Fixes hxvlc using global rather than local. you will need to use hmm / hxpkg to compile this project though-->
+    <setenv name="HAXEPATH" value="./"/>
+
+    <set name="BUILD_DIR" value="export/debug" if="debug"/>
+    <set name="BUILD_DIR" value="export/release" unless="debug" />
+	<set name="BUILD_DIR" value="export/final" if="final" />
+    <set name="BUILD_DIR" value="export/32bit" if="32bits" />
+    <set name="BUILD_DIR" value="${BUILD_DIR}-tracy" if="FEATURE_DEBUG_TRACY"/>
+
+    <assets path='assets/embeds' rename='assets' embed="true" />
+    <assets path="assets/game" rename="assets"/>
+
+    <assets path='content' embed='false' if="MODS_ALLOWED" unless="ASSET_REDIRECT"/>
 	
-<!-- ______________________ PSYCH ENGINE CUSTOMIZATION ______________________ -->
+	<assets path="gamemode.ini" if="linux" unless="debug"/>
 
-<define name="MODS_ALLOWED" if="desktop" />
-<define name="HSCRIPT_ALLOWED" if="desktop" />
-<define name="LUA_ALLOWED" if="desktop" />
-<define name="ACHIEVEMENTS_ALLOWED" />
-<define name="DISCORD_ALLOWED" />
+    <!--OpenAL config-->    <!-- appreciate you cyn0x8 and smokey for finding this -->
+    <section if="desktop">
+        <assets path="projFiles/alsoft.ini" rename="alsoft.ini" type="text" if="windows"/>
+        <assets path="projFiles/alsoft.ini" rename="alsoft.conf" type="text" unless="windows"/>
+    </section>
 
-	
-	<define name="VIDEOS_ALLOWED" if="windows || linux || android" unless="32bits"/>
+    <!-- HAXE LIBS -->
+    <!--Core engine libraries-->
+    <haxelib name="openfl"/>
+    <haxelib name="flixel"/>
+    <haxelib name="flixel-addons"/>
+    <haxelib name="flixel-ui" version="2.6.4"/>
+    <haxelib name="flixel-animate"/>
+		
+    <haxelib name="hscript-iris" version="git"/>
 
-<section if="officialBuild">
-	<define name="TITLE_SCREEN_EASTER_EGG"/>
-</section>
+    <haxelib name="moonchart"/>
 
-<!-- ____________________________ Window Settings ___________________________ -->
+    <haxelib name="haxeui-core"/>
+    <haxelib name="haxeui-flixel"/>
 
-<!--These window settings apply to all targets-->
-<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
+    <haxelib name="funkin.vis"/>
+    <haxelib name="grig.audio"/>
+    
+    <haxelib name="json5hx"/>
 
-<!--HTML5-specific-->
-<window if="html5" resizable="true" />
+    <haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED" version="1.3.0"/>
+    <haxelib name="hxvlc" if="VIDEOS_ALLOWED"/>
+	<haxelib name="hxgamemode" if="linux" unless="debug"/>
 
-<!--Desktop-specific-->
-<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
+    <!-- MACROS -->
 
-<!--Mobile-specific-->
-<window if="mobile" orientation="landscape" fullscreen="true" resizable="false"/>
+    <haxeflag name="--macro" value="addMetadata('@:build(funkin.backend.macro.FlxMacro.buildFlxSprite())', 'flixel.FlxSprite')" />
+    <haxeflag name="--macro" value="addMetadata('@:build(funkin.backend.macro.FlxMacro.buildFlxCamera())', 'flixel.FlxCamera')" />
+    <haxeflag name="--macro" value="addMetadata('@:build(funkin.backend.macro.FlxMacro.buildFlxGraphic())', 'flixel.graphics.FlxGraphic')" />
+    
+    <haxeflag name="--macro" value="addMetadata('@:build(funkin.backend.macro.FlxMacro.buildFlxDrawBaseItem())', 'flixel.graphics.tile.FlxDrawBaseItem')" />
+    <haxeflag name="--macro" value="addMetadata('@:build(funkin.backend.macro.FlxMacro.buildFlxDrawItem())', 'flixel.graphics.tile.FlxDrawQuadsItem')" />
+    <haxeflag name="--macro" value="addMetadata('@:build(funkin.backend.macro.FlxMacro.buildFlxDrawItem())', 'flixel.graphics.tile.FlxDrawTrianglesItem')" />
 
-<!--Switch-specific-->
-<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
+    <haxeflag name="--macro" value="addMetadata('@:nullSafety(Off)', 'hxvlc.openfl.Video')" if="VIDEOS_ALLOWED"/>
 
-<!-- _____________________________ Path Settings ____________________________ -->
+    <haxeflag name="--macro" value="include('funkin')" />
+    <haxeflag name="--macro" value="include('flixel', true, ['flixel.addons.nape.*','flixel.addons.editors.*','flixel.addons.tile.FlxRayCastTilemap','flixel.system.macros'])" />
+    
+    <haxeflag name="-dce no" />
 
-<set name="BUILD_DIR" value="export/debug" if="debug" />
-<set name="BUILD_DIR" value="export/release" unless="debug" />
-<set name="BUILD_DIR" value="export/32bit" if="32bits" />
+    <!-- HAXEDEFS -->
 
-<classpath name="source" />
+    <!--Needed for haxeui-->
+    <haxedef name="haxeui_dont_impose_base_class"/>
+    <haxedef name="haxeui_focus_out_on_click"/>
 
-<!-- __________________________ Game Assets & Etc. __________________________ -->
+    <!--Needed for better error reporting with hscript-->
+    <define name="hscriptPos"/>
 
-<!-- Turn on Crash Handler -->
-<define name="CRASH_HANDLER" if="desktop release" />
+    <!--Tracy profiler defines-->
+    <section if="FEATURE_DEBUG_TRACY">
+        <haxedef name="HXCPP_TELEMETRY"/>
+        <haxedef name="HXCPP_TRACY"/>
+        <haxedef name="HXCPP_TRACY_MEMORY"/>
+        <haxedef name="HXCPP_TRACY_ON_DEMAND"/>
+        <haxedef name="absolute-paths"/>
+    </section>
 
-<!-- Assets -->
-<assets path="assets/fonts" />
-<assets path="assets/shared"        exclude="*.ogg" if="web"/>
-<assets path="assets/shared"        exclude="*.mp3" unless="web"/>
-<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
-<assets path="assets/songs"         library="songs"         exclude="*.ogg" if="web"/>
-<assets path="assets/songs"         library="songs"         exclude="*.mp3" unless="web"/>
+    <!--Enable for better crash handling/reporting-->
+    <haxedef name="CRASH_HANDLER"/>
 
-<library name="videos"        preload="true" if="VIDEOS_ALLOWED"/>
-<library name="songs"         preload="true" />
+	<section if="CRASH_HANDLER">
+   		<haxedef name="openfl-enable-handle-error"/>
+    	<haxedef name="HXCPP_CHECK_POINTER"/>
+    	<haxedef name="HXCPP_STACK_LINE"/>
+    	<haxedef name="HXCPP_STACK_TRACE"/>
+	</section>
+ 
+    <!--Remove the legacy health system-->
+    <haxedef name="FLX_NO_HEALTH"/>
 
-<define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/>
-<!-- _______________________________ Libraries ______________________________ -->
+    <!--Disable the Flixel core focus lost screen-->
+    <haxedef name="FLX_NO_FOCUS_LOST_SCREEN"/>
 
-<haxelib name="flixel" />
-<haxelib name="flixel-ui" />
-<haxelib name="flixel-addons" />
-<haxelib name="tjson" />
-<haxelib name="linc_luajit" if="LUA_ALLOWED"/>
-<haxelib name="SScript" if="HSCRIPT_ALLOWED"/>
-<haxelib name="hxCodec" if="VIDEOS_ALLOWED"/>
-<haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED"/>
-<haxelib name="flxanimate"/>
+    <!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
+    <haxedef name="FLX_NO_DEBUG" unless="debug"/>
 
-<!-- Disable Discord IO Thread -->
-<haxedef name="DISCORD_DISABLE_IO_THREAD" if="hxdiscord_rpc" />
-<haxedef name="NO_PRECOMPILED_HEADERS" if="linux" />
+    <!--For haxe 4.3.0 and newer cleaner error reporting-->
+    <haxedef name="message.reporting" value="pretty"/>
 
-<!-- Enables a terminal log prompt on debug builds -->
-<haxelib name="hxcpp-debug-server" if="debug"/>
-<haxedef name="HXC_LIBVLC_LOGGING" if="VIDEOS_ALLOWED debug" />
+    <!--For haxe 4.3.0 and newer disables warnings-->
+    <haxedef name="no-deprecation-warnings"/>
 
-<!-- ______________________________ Haxedefines _____________________________ -->
+	<!-- MISCELLANEOUS -->
 
-<!--Disable the Flixel core focus lost screen-->
-<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
-
-<!-- Show debug traces for hxCodec -->
-<haxedef name="HXC_DEBUG_TRACE" if="debug" />
-
-<!--Disable the Flixel core debugger. Automatically gets set whenever you compile in release mode!-->
-<haxedef name="FLX_NO_DEBUG" unless="debug" />
-
-<!--Enable this for Nape release builds for a serious peformance improvement-->
-<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
-
-<!--Used for Izzy Engine's crash handler-->
-<haxedef name="HXCPP_CHECK_POINTER" if="CRASH_HANDLER" />
-<haxedef name="HXCPP_STACK_LINE" if="CRASH_HANDLER" />
-<haxedef name="HXCPP_STACK_TRACE" if="CRASH_HANDLER" />
-
-<!--Disable deprecated warnings-->
-<haxedef name='no-deprecation-warnings' />
-
-<!--Macro fixes-->
-<haxeflag name="--macro" value="allowPackage('flash')" />
-<haxeflag name="--macro" value="include('my.pack')" />
-
-<!-- _________________________________ Custom _______________________________ -->
-
-<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
-
-<assets path='pFiles/iconOG.png' rename='icon.png' if="linux" />
-
-<icon path="pFiles/icon16.png" size='16' />
-<icon path="pFiles/icon32.png" size='32'/>
-<icon path="pFiles/icon64.png" size='64'/>
-<icon path="pFiles/iconOG.png" />
+    <icon path="projFiles/icon/16.png" size='16'/>
+    <icon path="projFiles/icon/32.png" size='32'/>
+    <icon path="projFiles/icon/64.png" size='64'/>
+    <icon path="projFiles/icon/OG.png"/>
 </project>

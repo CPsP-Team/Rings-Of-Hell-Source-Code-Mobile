@@ -1,0 +1,84 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-21,
+				-3
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Majin_idle"
+		},
+		{
+			"offsets": [
+				243,
+				85
+			],
+			"loop": false,
+			"fps": 32,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Majin_up"
+		},
+		{
+			"offsets": [
+				-23,
+				-54
+			],
+			"loop": false,
+			"fps": 32,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Majin_down"
+		},
+		{
+			"offsets": [
+				206,
+				7
+			],
+			"loop": false,
+			"fps": 32,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Majin_left"
+		},
+		{
+			"offsets": [
+				-186,
+				-58
+			],
+			"loop": false,
+			"fps": 32,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Majin_right"
+		}
+	],
+	"no_antialiasing": false,
+	"ghosts_enabled": false,
+	"image": "characters/majinnnnn",
+	"position": [
+		0,
+		260
+	],
+	"dance_every": 2,
+	"gameover_intial_sound": null,
+	"scalableOffsets": false,
+	"gameover_confirm_sound": null,
+	"healthicon": "majinn",
+	"gameover_character": null,
+	"vslice_sustains": false,
+	"flip_x": false,
+	"healthbar_colour": -15917373,
+	"camera_position": [
+		-140,
+		0
+	],
+	"gameover_loop_sound": null,
+	"icon_count": 2,
+	"sing_duration": 6,
+	"scale": 1.4,
+	"_editor_isPlayer": false
+}

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="bgmogus_slime.png">
+<SubTexture name="bgmogus Vibin0000" x="1980" y="0" width="991" height="1341" frameX="-460" frameY="-378" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0001" x="1980" y="0" width="991" height="1341" frameX="-460" frameY="-378" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0002" x="2971" y="1322" width="1003" height="1289" frameX="-448" frameY="-428" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0003" x="2971" y="1322" width="1003" height="1289" frameX="-448" frameY="-428" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0004" x="2971" y="0" width="1027" height="1322" frameX="-454" frameY="-396" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0005" x="2971" y="0" width="1027" height="1322" frameX="-454" frameY="-396" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0006" x="999" y="1346" width="1009" height="1333" frameX="-458" frameY="-386" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0007" x="999" y="1346" width="1009" height="1333" frameX="-458" frameY="-386" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0008" x="0" y="1346" width="999" height="1341" frameX="-460" frameY="-378" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0009" x="0" y="1346" width="999" height="1341" frameX="-460" frameY="-378" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0010" x="0" y="0" width="990" height="1346" frameX="-461" frameY="-373" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus idle0000" x="0" y="0" width="990" height="1346" frameX="-461" frameY="-373" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0011" x="990" y="0" width="990" height="1346" frameX="-461" frameY="-373" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0012" x="990" y="0" width="990" height="1346" frameX="-461" frameY="-373" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0013" x="990" y="0" width="990" height="1346" frameX="-461" frameY="-373" frameWidth="1805" frameHeight="2052" />
+<SubTexture name="bgmogus Vibin0014" x="990" y="0" width="990" height="1346" frameX="-461" frameY="-373" frameWidth="1805" frameHeight="2052" />
+</TextureAtlas>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BackButton.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="699" y="0" width="699" height="699" frameX="-27" frameY="-27" frameWidth="750" frameHeight="750"/>
+	<SubTexture name="pressed0000" x="0" y="0" width="699" height="699" frameX="-27" frameY="-27" frameWidth="750" frameHeight="750"/>
+</TextureAtlas>

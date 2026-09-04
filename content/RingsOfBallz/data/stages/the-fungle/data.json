@@ -1,0 +1,36 @@
+{
+	"directory": "",
+	"defaultZoom": 0.5,
+	"isPixelStage": false,
+	"hide_girlfriend": false,
+
+	"boyfriend": [1400, 870],
+	"girlfriend": [850, 210],
+	"opponent": [1000, 1120],
+
+	"camera_opponent": [-575, -900],
+	"camera_boyfriend": [-375, 0],
+
+	"loadingImages": [
+		"stages/the-fungle/mountain",
+		"stages/the-fungle/objects",
+		"stages/the-fungle/grass",
+		"stages/the-fungle/bgmogus_box",
+		"stages/the-fungle/bgmogus_slime",
+		"stages/the-fungle/light",
+		"stages/the-fungle/particles",
+		"stages/the-fungle/particles2",
+
+		"hud/draepostor/healthbar/bar1",
+		"hud/draepostor/healthbar/bar2",
+		"hud/draepostor/healthbar/bar3",
+		"hud/draepostor/healthbar/bar4",
+		"hud/draepostor/healthbar/bar5",
+
+		"hud/draepostor/healthbar/black",
+		"hud/draepostor/healthbar/healthbar",
+		"hud/draepostor/healthbar/border",
+		"hud/draepostor/timebar/blackbar",
+		"hud/draepostor/timebar/timeBar"
+	]
+}

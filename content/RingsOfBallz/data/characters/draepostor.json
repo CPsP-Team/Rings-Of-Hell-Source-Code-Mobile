@@ -1,0 +1,84 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				1208,
+				780
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "draepostor Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1218,
+				777
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "draepostor Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1083,
+				843
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "draepostor Down",
+			"indices": []
+		},
+		{
+			"offsets": [
+				1174,
+				837
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "draepostor Up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1188,
+				780
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "draepostor Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"ghosts_enabled": false,
+	"image": "characters/draepostor",
+	"position": [
+		100,
+		190
+	],
+	"dance_every": 2,
+	"gameover_intial_sound": null,
+	"scalableOffsets": false,
+	"gameover_confirm_sound": null,
+	"healthicon": "draepostor",
+	"gameover_character": null,
+	"vslice_sustains": false,
+	"flip_x": false,
+	"healthbar_colour": -11376746,
+	"camera_position": [
+		-170,
+		30
+	],
+	"gameover_loop_sound": null,
+	"icon_count": 2,
+	"sing_duration": 6.4,
+	"scale": 0.3,
+	"_editor_isPlayer": false
+}

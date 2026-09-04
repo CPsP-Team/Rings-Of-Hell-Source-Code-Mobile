@@ -1,0 +1,32 @@
+{
+	"songs": [
+		[
+			"Bloodnight",
+			"eyx",
+			[
+				26,
+				53,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": "Hard",
+	"weekCharacters": [
+		"",
+		"bf",
+		""
+	],
+	"storyName": "",
+	"weekName": "eyx",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

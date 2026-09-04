@@ -1,0 +1,95 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-13,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-13,
+				6
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				-1
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				9,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-13,
+				4
+			],
+			"anim": "scream",
+			"fps": 24,
+			"name": "Scream",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"ghosts_enabled": false,
+	"image": "characters/2025x-angry",
+	"position": [
+		-460,
+		-290
+	],
+	"dance_every": 2,
+	"gameover_intial_sound": null,
+	"scalableOffsets": false,
+	"gameover_confirm_sound": null,
+	"healthicon": "2025-mad",
+	"gameover_character": null,
+	"vslice_sustains": false,
+	"flip_x": false,
+	"healthbar_colour": -12305066,
+	"camera_position": [
+		160,
+		80
+	],
+	"gameover_loop_sound": null,
+	"icon_count": 2,
+	"sing_duration": 4,
+	"scale": 0.6,
+	"_editor_isPlayer": false
+}

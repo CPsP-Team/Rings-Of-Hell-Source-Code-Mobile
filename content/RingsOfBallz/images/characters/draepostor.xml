@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="draepostor.png">
+<SubTexture name="draepostor Down0000" x="0" y="3162" width="2205" height="1494" frameX="-392" frameY="-566" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Down0001" x="0" y="3162" width="2205" height="1494" frameX="-392" frameY="-566" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Down0002" x="0" y="7605" width="2118" height="1446" frameX="-445" frameY="-565" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Down0003" x="0" y="7605" width="2118" height="1446" frameX="-445" frameY="-565" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Down0004" x="6245" y="4433" width="2102" height="1454" frameX="-439" frameY="-537" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Down0005" x="6245" y="4433" width="2102" height="1454" frameX="-439" frameY="-537" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Down0006" x="8465" y="0" width="2095" height="1450" frameX="-436" frameY="-528" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Down0007" x="8465" y="0" width="2095" height="1450" frameX="-436" frameY="-528" frameWidth="2894" frameHeight="2386" />
+<SubTexture name="draepostor Idle0000" x="6245" y="2961" width="2217" height="1472" frameX="-305" frameY="-291" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0001" x="6245" y="2961" width="2217" height="1472" frameX="-305" frameY="-291" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0002" x="0" y="6145" width="2279" height="1460" frameX="-274" frameY="-340" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0003" x="0" y="6145" width="2279" height="1460" frameX="-274" frameY="-340" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0004" x="6245" y="0" width="2220" height="1484" frameX="-324" frameY="-297" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0005" x="6245" y="0" width="2220" height="1484" frameX="-324" frameY="-297" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0006" x="2205" y="3162" width="2216" height="1492" frameX="-315" frameY="-274" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0007" x="2205" y="3162" width="2216" height="1492" frameX="-315" frameY="-274" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0008" x="0" y="4656" width="2204" height="1489" frameX="-316" frameY="-269" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0009" x="0" y="4656" width="2204" height="1489" frameX="-316" frameY="-269" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0010" x="2204" y="4656" width="2204" height="1489" frameX="-316" frameY="-269" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Idle0011" x="2204" y="4656" width="2204" height="1489" frameX="-316" frameY="-269" frameWidth="2971" frameHeight="2080" />
+<SubTexture name="draepostor Left0000" x="2084" y="1604" width="1812" height="1525" frameX="-330" frameY="-242" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Left0001" x="2084" y="1604" width="1812" height="1525" frameX="-330" frameY="-242" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Left0002" x="4158" y="1546" width="1788" height="1530" frameX="-400" frameY="-262" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Left0003" x="4158" y="1546" width="1788" height="1530" frameX="-400" frameY="-262" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Left0004" x="4421" y="3162" width="1795" height="1487" frameX="-398" frameY="-260" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Left0005" x="4421" y="3162" width="1795" height="1487" frameX="-398" frameY="-260" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Left0006" x="6245" y="1484" width="1789" height="1477" frameX="-407" frameY="-258" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Left0007" x="6245" y="1484" width="1789" height="1477" frameX="-407" frameY="-258" frameWidth="2995" frameHeight="2036" />
+<SubTexture name="draepostor Right0000" x="8465" y="1450" width="1820" height="1445" frameX="-900" frameY="-253" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Right0001" x="8465" y="1450" width="1820" height="1445" frameX="-900" frameY="-253" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Right0002" x="2279" y="6145" width="1863" height="1454" frameX="-859" frameY="-244" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Right0003" x="2279" y="6145" width="1863" height="1454" frameX="-859" frameY="-244" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Right0004" x="4142" y="6145" width="1850" height="1453" frameX="-840" frameY="-245" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Right0005" x="4142" y="6145" width="1850" height="1453" frameX="-840" frameY="-245" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Right0006" x="5992" y="6145" width="1845" height="1452" frameX="-828" frameY="-246" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Right0007" x="5992" y="6145" width="1845" height="1452" frameX="-828" frameY="-246" frameWidth="2946" frameHeight="2201" />
+<SubTexture name="draepostor Up0000" x="0" y="0" width="2083" height="1604" frameX="-164" frameY="-290" frameWidth="2639" frameHeight="2114" />
+<SubTexture name="draepostor Up0001" x="0" y="0" width="2083" height="1604" frameX="-164" frameY="-290" frameWidth="2639" frameHeight="2114" />
+<SubTexture name="draepostor Up0002" x="2083" y="0" width="2075" height="1579" frameX="-162" frameY="-309" frameWidth="2639" frameHeight="2114" />
+<SubTexture name="draepostor Up0003" x="2083" y="0" width="2075" height="1579" frameX="-162" frameY="-309" frameWidth="2639" frameHeight="2114" />
+<SubTexture name="draepostor Up0004" x="0" y="1604" width="2084" height="1558" frameX="-163" frameY="-327" frameWidth="2639" frameHeight="2114" />
+<SubTexture name="draepostor Up0005" x="0" y="1604" width="2084" height="1558" frameX="-163" frameY="-327" frameWidth="2639" frameHeight="2114" />
+<SubTexture name="draepostor Up0006" x="4158" y="0" width="2087" height="1546" frameX="-164" frameY="-338" frameWidth="2639" frameHeight="2114" />
+<SubTexture name="draepostor Up0007" x="4158" y="0" width="2087" height="1546" frameX="-164" frameY="-338" frameWidth="2639" frameHeight="2114" />
+</TextureAtlas>

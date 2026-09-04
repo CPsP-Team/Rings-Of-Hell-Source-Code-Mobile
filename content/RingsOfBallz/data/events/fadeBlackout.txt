@@ -1,0 +1,2 @@
+Value1: black or normal
+value2: duration

@@ -1,0 +1,30 @@
+{
+	"storyName": "",
+	"difficulties": "Hard, Nightmare",
+	"hideFreeplay": false,
+	"weekBackground": "mogus",
+	"freeplayColor": [
+		22,
+		13,
+		135
+	],
+	"startUnlocked": true,
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Sussus Hillus",
+			"draepostor",
+			[
+				22,
+				13,
+				135
+			]
+		]
+	],
+	"weekName": ""
+}
