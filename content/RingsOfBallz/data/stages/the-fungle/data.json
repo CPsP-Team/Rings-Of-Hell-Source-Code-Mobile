@@ -9,7 +9,7 @@
 	"opponent": [1000, 1120],
 
 	"camera_opponent": [-575, -900],
-	"camera_boyfriend": [-375, 0],
+	"camera_boyfriend": [-375, -100],
 
 	"loadingImages": [
 		"stages/the-fungle/mountain",

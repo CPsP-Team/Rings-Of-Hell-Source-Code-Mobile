@@ -28,14 +28,14 @@ final flags:Map<String, String> = [
 // I don't feel like rewriting the description to be in the correct spot, I'm tired
 final creditsData:Map<String, Array<Array<String>>> = [
 	'Artists' => [
-		['EduMakesStuff (Inski)', 'MrEMS91', 'Owner, Artist', 'mx', 'https://www.youtube.com/@inski-fansonic99'],
+		['EduMakesStuff (Inski)', 'MrEMS91', 'Owner, Artist, Animator', 'mx', 'https://www.youtube.com/@inski-fansonic99'],
         ['The Gosha', 'gosha', 'Lead Artist, Animator', 'ru', 'https://www.youtube.com/@the-gosha360'],
         ['Lakris', 'lakris', 'Lead Artist', 'ru', 'https://www.youtube.com/@Lakris44'],
         ['HyperDream', 'HyperDream', 'Artist', 'mn', 'https://youtube.com/@hyperisdreaming'],
         ['Steven', 'steven', 'Artist, Animator', 'br', 'https://youtube.com/@thestevenoficial?si=RQIxQhd3t1SuF3Rc'],
         ['Caua G.546', 'Caua', 'Artist', 'br', 'https://www.youtube.com/@cauag.546'],
 		['MaysLastPlay', 'mays', 'Owner, Artist', 'ua', 'https://twitter.com/mayslastplay'],
-        ['Xenz', 'minineo', 'Artist, Animator', null, 'https://youtube.com/@mini_neooo?si=CEmOrwSBkx5YS4hR'] 
+        ['Xenz', 'minineo', 'Artist, Animator', 'th', 'https://youtube.com/@mini_neooo?si=CEmOrwSBkx5YS4hR'] 
 	],
 	'Programmers' => [
 		['MaysLastPlay', 'mays', 'Owner, Lead Coder', 'ua', 'https://twitter.com/mayslastplay'],

@@ -35,7 +35,7 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/bfgameover",
+	"image": "characters/bf/bfgameover",
 	"position": [
 		-220,
 		180

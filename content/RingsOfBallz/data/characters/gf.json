@@ -1,45 +1,75 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
-				0,
-				-9
+				108,
+				75
 			],
-			"anim": "danceLeft",
+			"loop": false,
 			"fps": 24,
-			"name": "idle-left",
-			"indices": []
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "GF_left"
+		},
+		{
+			"offsets": [
+				92,
+				95
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "GF_right"
+		},
+		{
+			"offsets": [
+				38,
+				35
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "GF_idle"
 		},
 		{
 			"loop": false,
+			"flipY": false,
 			"offsets": [
 				0,
-				-9
+				-1
 			],
-			"anim": "danceRight",
+			"anim": "idle",
 			"fps": 24,
-			"name": "idle-right",
-			"indices": []
+			"name": "GF_idle",
+			"indices": [],
+			"flipX": false
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/girlfriend",
+	"ghosts_enabled": false,
+	"image": "characters/gf/GF_ROH",
 	"position": [
 		110,
-		50
+		80
 	],
+	"dance_every": 2,
+	"gameover_intial_sound": null,
+	"scalableOffsets": false,
+	"gameover_confirm_sound": null,
 	"healthicon": "gf",
+	"gameover_character": null,
+	"vslice_sustains": false,
 	"flip_x": false,
-	"healthbar_colors": [
-		165,
-		0,
-		77
-	],
+	"healthbar_colour": -5963699,
 	"camera_position": [
 		0,
 		0
 	],
+	"gameover_loop_sound": null,
+	"icon_count": 2,
 	"sing_duration": 4,
-	"scale": 1.2
+	"scale": 0.5,
+	"_editor_isPlayer": false
 }

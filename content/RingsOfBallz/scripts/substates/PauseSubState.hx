@@ -93,9 +93,9 @@ function onCreatePost()
 	{
 		case "bloodnight":
 			stageName = "Crystal Lake Zone";
-		case "shadow-of-divinity" | "shadow-of-divinity-legacy" | "infinite-torment":
+		case "shadow-of-divinity", "shadow-of-divinity-legacy", "infinite-torment":
 			stageName = "Green Hill Zone";
-		case "sussus-hillus" | "sussus-hillus-legacy":
+		case "sussus-hillus", "sussus-hillus-legacy":
 			stageName = "The Fungle Map";
 	}
 
