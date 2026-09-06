@@ -69,10 +69,17 @@ class SyncedFlxSoundGroup extends FlxTypedGroup<FlxSound>
 		snd.time = time;
 		snd.pitch = pitch;
 		snd.volume = volume;
+		if (snd != getFirstAlive()) snd.endTime = snd.length;
 		
 		FlxG.sound.list.add(snd);
 		
 		return snd;
+	}
+	
+	// if vocals are shorter than inst, game doesnt bug out and get stuck in a cycle of looping the vocals over and over and over and...
+	public inline function checkLength(snd:Null<FlxSound>):Bool
+	{
+		return ((snd?.time ?? 0) < songLength) && ((snd?.length ?? 0) <= songLength) && ((snd?.time ?? 0) < (snd?.length ?? 1));
 	}
 	
 	/**
@@ -85,8 +92,11 @@ class SyncedFlxSoundGroup extends FlxTypedGroup<FlxSound>
 		
 		var diff:Float = 0;
 		forEachAlive(snd -> {
-			final s = Math.abs(snd.time - time);
-			if (s > diff) diff = s; // get the highest difference
+			if (checkLength(snd))
+			{
+				final s = Math.abs(snd.time - time);
+				if (s > diff) diff = s; // get the highest difference
+			}
 		});
 		
 		return diff;
@@ -101,9 +111,12 @@ class SyncedFlxSoundGroup extends FlxTypedGroup<FlxSound>
 		final time = baseTime ?? getFirstAlive()?.time ?? 0.0;
 		
 		forEachAlive(snd -> {
-			snd.pause();
-			snd.time = time;
-			snd.play(false, time);
+			if (checkLength(snd))
+			{
+				snd.pause();
+				snd.time = time;
+				snd.play(false, time);
+			}
 		});
 	}
 	
@@ -224,6 +237,23 @@ class PlayableSong extends VocalGroup
 	public var inst:Null<FlxSound> = null;
 	public var trackSwap:Bool = false;
 	public var splitVocals:Bool = false;
+	public var hasVoices:Bool = false;
+	
+	// used for checking if the voices are there & still actively playing
+	private function validVoiceGroup(group:SyncedFlxSoundGroup):Bool return ((group?.length ?? 0) > 0 && (group?.checkLength(group?.getFirstAlive()) ?? false));
+	
+	// basically, if the song has voices, check if any of the voices are still playing. if so, return true. if otherwise, return false. same thing for if the song has no voices
+	public function syncVoiceStatus():Bool
+	{
+		if (trackSwap || !hasVoices) return false;
+		
+		for (group in [playerVocals, opponentVocals])
+		{
+			if (validVoiceGroup(group)) return true;
+		}
+		
+		return false;
+	}
 	
 	public function populate(?data:Song):Void
 	{
@@ -262,11 +292,10 @@ class PlayableSong extends VocalGroup
 			
 			if (data.needsVoices)
 			{
+				hasVoices = true;
+				
 				var playerSound = Paths.voices(data.song, 'player');
-				if (playerSound == null)
-				{
-					playerSound = Paths.voices(data.song, null);
-				}
+				if (playerSound == null) playerSound = Paths.voices(data.song, null);
 				if (playerSound != null) addPlayerVocals(new FlxSoundEx().loadEmbedded(playerSound));
 				
 				final opponentSound = Paths.voices(data.song, 'opp');
@@ -280,8 +309,7 @@ class PlayableSong extends VocalGroup
 	override public function play(forceRestart:Bool = false, startTime:Float = 0.0, ?endTime:Null<Float>)
 	{
 		if (trackSwap && inst != null) inst.volume = 0;
-		if (endTime == null || endTime == 0)
-			endTime = songLength;
+		if (endTime == null || endTime == 0) endTime = songLength;
 		
 		super.play(forceRestart, startTime, endTime);
 	}
