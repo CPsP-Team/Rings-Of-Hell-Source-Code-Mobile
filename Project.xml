@@ -5,7 +5,7 @@
 
     <window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false"/>
     <window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
-	<window unless="mac || linux" allow-high-dpi="true"/>
+	<window unless="mac || linux || mobile" allow-high-dpi="true"/>
 
     <window if="mobile" orientation="landscape" fullscreen="true" resizable="false"/>
 
