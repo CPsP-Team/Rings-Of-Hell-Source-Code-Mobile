@@ -108,6 +108,14 @@ class FileSystem
 
 		trace("Warning: deleteFile failed! File not found in the private folder or attempted to delete a protected Asset.");
 	}
+
+	/**
+	 * rename is NOT supported for Assets.
+	 */
+	public static function rename(path:String, destination:String):Void
+	{
+		trace("Warning: rename is not supported for Assets!");
+	}
 }
 
 class File
