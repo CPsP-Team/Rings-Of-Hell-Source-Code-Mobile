@@ -15,10 +15,12 @@ import flixel.FlxBasic;
 import flixel.math.FlxPoint;
 import flixel.sound.FlxSound;
 
-#if sys
+#if (sys && !android)
 import sys.*;
 
 import sys.io.*;
+#elseif android
+import mobile.backend.FileSystem;
 #end
 
 import funkin.api.DiscordClient;
