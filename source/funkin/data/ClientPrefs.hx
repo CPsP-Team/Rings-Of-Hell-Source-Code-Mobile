@@ -321,7 +321,8 @@ class ClientPrefs
 			{
 				final file = FlxSave.validate(FlxG.stage.application.meta.get('file'));
 				final path = SaveUtil.getPath('', '$file/$name');
-				
+
+        #if desktop
 				if (FileSystem.exists(path))
 				{
 					final corruptedPath = path.withoutExtension() + ' (corrupted) ${Date.now().toString().replace(':', '_')}.sol';
@@ -329,6 +330,7 @@ class ClientPrefs
 					
 					trace('Save was corrupted. corrupted save was placed at $corruptedPath');
 				}
+        #end
 			}
 			FlxG.save.bind(name, CoolUtil.getSavePath());
 		}
