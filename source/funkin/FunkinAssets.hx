@@ -64,9 +64,9 @@ class FunkinAssets
 	 */
 	public static function getBytes(path:String):Bytes
 	{
-		#if (MODS_ALLOWED || ASSET_REDIRECT)
+		#if ((MODS_ALLOWED || ASSET_REDIRECT) && !android)
 		if (FileSystem.exists(path)) return File.getBytes(path);
-		#end
+    #end
 		if (Assets.exists(path)) return Assets.getBytes(path);
 		else
 		{
@@ -79,10 +79,10 @@ class FunkinAssets
 	 */
 	public static function getContent(path:String):String
 	{
-		#if (MODS_ALLOWED || ASSET_REDIRECT)
+		#if ((MODS_ALLOWED || ASSET_REDIRECT) && !android)
 		if (FileSystem.exists(path)) return File.getContent(path);
 		else
-		#end
+    #end
 		if (Assets.exists(path)) return Assets.getText(path);
 		else
 		{
@@ -98,7 +98,7 @@ class FunkinAssets
 	public static function getBitmapData(path:String, useCache:Bool = true):Null<BitmapData>
 	{
 		var bitmap:Null<BitmapData> = null;
-		#if (MODS_ALLOWED || ASSET_REDIRECT) if (FileSystem.exists(path)) bitmap = BitmapData.fromFile(path);
+		#if ((MODS_ALLOWED || ASSET_REDIRECT) && !android) if (FileSystem.exists(path)) bitmap = BitmapData.fromFile(path);
 		else #end if (Assets.exists(path, IMAGE)) bitmap = Assets.getBitmapData(path, useCache);
 		
 		return bitmap;
@@ -110,11 +110,11 @@ class FunkinAssets
 	public static function exists(path:String, ?type:AssetType):Bool
 	{
 		var exists:Bool = false;
-		
-		#if (MODS_ALLOWED || ASSET_REDIRECT)
+
+		#if ((MODS_ALLOWED || ASSET_REDIRECT) && !android)
 		if (FileSystem.exists(path)) exists = true;
 		else
-		#end
+    #end
 		if (Assets.exists(path, type)) exists = true;
 		
 		return exists;
@@ -127,7 +127,8 @@ class FunkinAssets
 	 */
 	public static function readDirectory(directory:String):Array<String>
 	{
-		#if (MODS_ALLOWED || ASSET_REDIRECT)
+    
+		#if ((MODS_ALLOWED || ASSET_REDIRECT) && !android)
 		return FileSystem.exists(directory) ? FileSystem.readDirectory(directory) : []; // doing a check because i want this to maintain parity with ther assets variation
 		#else
 		if (directory.trim().length == 0) return [];
@@ -138,7 +139,7 @@ class FunkinAssets
 	
 	public static function isDirectory(directory:String):Bool
 	{
-		#if (MODS_ALLOWED || ASSET_REDIRECT)
+		#if ((MODS_ALLOWED || ASSET_REDIRECT) && !android)
 		return FileSystem.isDirectory(directory);
 		#else
 		// this method is a bit chopped...
@@ -229,7 +230,7 @@ class FunkinAssets
 		
 		var sound:Null<Sound> = null;
 		
-		#if (MODS_ALLOWED || ASSET_REDIRECT) if (FileSystem.exists(key)) sound = Sound.fromFile(key);
+		#if ((MODS_ALLOWED || ASSET_REDIRECT) && !android) if (FileSystem.exists(key)) sound = Sound.fromFile(key);
 		else #end if (Assets.exists(key, SOUND)) sound = Assets.getSound(key, true);
 		
 		if (sound != null)
