@@ -15,7 +15,7 @@ import flixel.FlxBasic;
 import flixel.math.FlxPoint;
 import flixel.sound.FlxSound;
 
-#if (sys && !android)
+#if desktop
 import sys.*;
 
 import sys.io.*;
